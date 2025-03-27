@@ -1,0 +1,80 @@
+.container-form {
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 20px;
+    color: #8D8AA6;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    width: 90%; /* Adaptable al tamaño de la pantalla */
+    max-width: 600px; /* Limita el ancho máximo */
+    margin: 20px auto; /* Centrado en la pantalla */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado entre los elementos */
+}
+
+.contact-form input, .contact-form textarea {
+    position: relative; /* Necesario para el pseudo-elemento */
+    width: 100%; /* Ocupan todo el ancho disponible */
+    border: none; /* Sin bordes visibles */
+    border-bottom: 2px solid #ccc; /* Línea inicial debajo */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    outline: none; /* Sin bordes al hacer focus */
+    background: transparent; /* Fondo minimalista */
+    color: #333; /* Color del texto */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+color: #aaa; /* Color del placeholder */
+font-style: italic; /* Diseño más suave para el texto del placeholder */
+}
+
+/* Efecto de subrayado al hacer hover o focus */
+.contact-form input:focus, 
+.contact-form textarea:focus {
+border-bottom: 2px solid #8D8AA6; /* Cambia el color al hacer focus */
+}
+
+.contact-form input::after, 
+.contact-form textarea::after {
+content: ""; /* Pseudo-elemento vacío */
+position: absolute;
+bottom: 0; /* Posiciona la línea justo debajo del input */
+left: 0; /* Empieza desde el borde izquierdo */
+width: 0; /* Comienza sin ancho */
+height: 2px; /* Grosor de la línea */
+background-color: #8D8AA6; /* Color del subrayado */
+transition: width 300ms ease-in-out; /* Animación fluida */
+}
+
+.contact-form input:hover::after, 
+.contact-form textarea:hover::after {
+width: 100%; /* Línea abarca el ancho completo del input */
+}
+
+/* Botón minimalista */
+.contact-form button {
+background-color: #8D8AA6; /* Color del botón */
+color: white;
+font-size: 18px;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 300ms ease-in-out;
+}
+
+.contact-form button:hover {
+background-color: #6F6791; /* Color más oscuro al pasar el cursor */
+}
+

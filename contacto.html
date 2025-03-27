@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/estilo-menu-lateral.css">
+    <link rel="stylesheet" href="/assets/css/fontello.css">
+    <link rel="stylesheet" href="/assets/css/contacto.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+<body>
+    <div id="grid">
+        <div id="left">
+            <li><a class="inicio" href="menu-lateral.html"><i class="icon-home"></i><span>Inicio</span></a></li>
+            <li><a href="galeria.html"><i class="icon-th-large"></i><span>Galeria</span></a></li>
+            <li><a href="personal.html"><i class="icon-heart-empty"></i><span>Sobre mí</span></a></li>
+            <li><a href="contacto.html"><i class="icon-mail-alt"></i><span>Contacto</span></a></li>
+        </div>
+        <div id="right">
+            
+            <div class="container-form">
+                <h2>Contacto</h2>
+                <p><span>Envíame aquí tus comentarios y sugerencias</span><i>:)</i></p>
+                <form action="process_contact.php" method="POST" class="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                    <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                    <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+                    <button type="submit">Enviar</button>
+                  </form>
+            </div>
+            
+              
+            
+        </div>
+    </div>
+
+</body>
+</html>

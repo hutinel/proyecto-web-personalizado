@@ -1,0 +1,139 @@
+/* ============================
+   RESET BÁSICO PARA EL DOCUMENTO
+   ============================ */
+   body {
+    margin: 0; /* Eliminamos los márgenes por defecto */
+    /* font-family: Arial, sans-serif; Fuente base opcional */
+}
+
+/* ============================
+   CONFIGURACIÓN GENERAL DEL GRID
+   ============================ */
+#grid {
+    height: 100vh; /* Altura completa de la ventana */
+    display: grid; /* Activamos el sistema grid */
+    grid-template-columns: var(--left, 100px) auto; /* Columnas dinámicas */
+    transition: grid-template-columns 300ms ease-in-out; /* Transición suave */
+}
+
+/* Ampliación dinámica del menú lateral */
+#grid:has(#left:hover) {
+    --left: 30%; /* Ancho de la columna izquierda al pasar el cursor */
+}
+
+/* ============================
+   CONFIGURACIÓN DEL MENÚ LATERAL
+   ============================ */
+   #left {
+    background: #8D8AA6; /* Fondo morado */
+    display: flex; /* Flexbox para alineación */
+    flex-direction: column; /* Alineamos en columna */
+    justify-content: center; /* Centramos verticalmente */
+    align-items: center; /* Centramos horizontalmente el contenido */
+}
+
+#left li {
+    list-style: none; /* Quitamos subrayado de la lista */
+    margin-bottom: 10px; /* Espaciado entre elementos */
+    display: flex;
+    justify-content: center;
+}
+
+#left a {
+    display: flex; /* Usamos Flexbox */
+    justify-content: flex-start; /* Alineamos íconos y texto hacia la izquierda */
+    align-items: center; /* Centramos verticalmente */
+    gap: 10px; /* Espacio entre ícono y texto */
+    width: 90%; /* Ancho dinámico en el estado expandido */
+    max-width: 300px; /* Límite de ancho para evitar desbordes */
+    height: auto; /* Altura dinámica */
+    color: white;
+    text-decoration: none;
+    padding: 12px 10px; /* Espaciado interno más uniforme */
+    transition: all 300ms ease-in-out; /* Transición completa */
+    text-align: left; /* Alineamos el texto a la izquierda */
+}
+
+
+#left a i {
+    font-size: 24px; /* Tamaño del ícono */
+    transition: transform 300ms ease-in-out; /* Suavidad en transformaciones opcionales */
+}
+
+#left a span {
+    display: none; /* Ocultamos el texto por completo en el estado contraído */
+}
+
+#grid:has(#left:hover) #left a {
+    width: auto; /* Ajustamos el ancho al expandir el menú */
+    height: auto; /* Recuperamos altura automática */
+}
+
+#grid:has(#left:hover) #left a span {
+    display: inline; /* Mostramos el texto al expandir */
+}
+
+/* ============================
+   ANIMACIÓN DE SUBRAYADO EN ENLACES
+   ============================ */
+a {
+    position: relative; /* Para posicionar el pseudo-elemento */
+    font-weight: bold; /* Texto en negrita */
+}
+
+a::after {
+    content: ""; /* Pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento relativo al enlace */
+    bottom: 0; /* Justo debajo del texto */
+    left: 0; /* Inicia desde la izquierda */
+    width: 0; /* Sin ancho inicial */
+    height: 2px; /* Grosor de la línea */
+    background-color: white; /* Subrayado blanco */
+    transition: width 300ms ease-in-out; /* Suavidad en el movimiento */
+}
+
+/* Efecto al pasar el cursor sobre los enlaces */
+a:hover::after {
+    width: 100%; /* Expande al ancho del texto */
+}
+
+/* ============================
+   ESTILOS PARA EL CONTENEDOR DERECHO
+   ============================ */
+#right {
+    background: #F2C9D4; /* Fondo rosa claro */
+    border: 3rem solid rgb(0 0 0 / 10%); /* Borde translúcido */
+}
+
+/* ============================
+   ESTILOS PARA TARJETAS O CARDS
+   ============================ */
+.card {
+    display: inline-block; /* Permite múltiples tarjetas en línea */
+    margin: 15px; /* Espaciado entre tarjetas */
+    background: #A68D96; /* Fondo lila claro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    height: 200px; /* Altura fija */
+    width: 200px; /* Ancho fijo */
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out; /* Suavidad en hover */
+}
+
+/* Efecto hover en tarjetas */
+.card:hover {
+    transform: scale(1.05); /* Escala ligeramente al pasar el cursor */
+    cursor: pointer; /* Cambia el cursor */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* ============================
+   ESTILOS PARA EL PIE DE PÁGINA
+   ============================ */
+footer {
+    background: #8D8AA6; /* Fondo morado */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado horizontal */
+    padding: 10px; /* Espaciado interno */
+    position: absolute; /* Fijo al fondo */
+    bottom: 0; /* Ubicado en la parte inferior */
+    width: 100%; /* Ancho completo */
+}
